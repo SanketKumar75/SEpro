@@ -1,0 +1,321 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background: rgb(199, 179, 150);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: -20px 0 50px;
+}
+
+h1{
+    font-weight: bolder;
+    margin: 0;
+
+}
+
+p{
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    margin: 20px 0 30px;
+
+}
+
+span{
+    font-size: 12px;}
+
+a{
+    color:black;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+
+}
+
+.container{
+    background: white;
+    border-radius: 10px;
+    box-shadow:  0 10px 28px rgba(0, 0, 0, 0.25) 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+    width: 750px;
+    max-width: 90%;
+    min-height: 480px;
+    margin-top: 10%;
+    
+}
+
+.form-box form{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.icons{
+    margin: 20px 0;
+}
+
+.icons a{
+    border: 2px solid black;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    height: 25px;
+    width: 25px;
+}
+
+.form-box input{
+    background: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+
+}
+
+button{
+    border-radius: 20px;
+    border: 1px solid orange;
+    background: pink;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 50ms ease-in;
+}
+
+button:active{
+    transform: scale(0.96);
+}
+
+button:focus{
+    outline: none;
+}
+
+button.ghost{
+    background: transparent;
+    border-color: white;
+    color: #eee;
+}
+
+.form-box{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition:all 0.6s ease-in-out;
+}
+
+.login-box{
+    background: yellow;
+    left: 0;
+    width: 50%;
+    z-index: 3;
+    
+}
+.signup-box{
+    background: green;
+    left: 0;
+    width: 50%;
+    z-index: 1;
+    opacity: 0;
+    
+}
+
+.overlay-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 10;
+    
+}
+
+.overlay{
+    
+    background: orangered;
+    background:green;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+    
+
+}
+.overlay-box{
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+
+
+}
+
+.right-overlay{
+    right: 0;
+    position:absolute;
+    transform: translateX(20);
+    transition: transform 0.6s ease-in-out;
+
+}
+
+.left-overlay{
+    left: 0;
+    position:fixed;
+    transform: translateX(-20%);
+    transition: transform 0.6s ease-in-out;
+
+}
+
+.container.right-panel-active .login-box{
+    transform: translateX(100%);
+}
+
+.container.right-panel-active .overlay-container{
+    transform: translateX(-100%);
+
+}
+
+.container.right-panel-active .signup-box{
+    transform: translateX(100%);
+    opacity:1;
+    z-index: 5;
+}
+
+.container.right-panel-active .overlay{
+    transform: translateX(50%);
+}
+
+.container.right-panel-active .left-overlay{
+    transform: translateX(0%);
+}
+
+.container.right-panel-active .right-overlay{
+    transform: translateX(0%);
+}
+
+
+
+
+
+
+@media screen and (max-width: 600px){
+    .container{
+        margin-top: 20%;
+        height: 650px;
+        display: flex;  
+    }
+    .form-box form{
+        padding: 0 50px;
+        height: 80%;
+    }
+    .login-box{
+        background: yellow;
+        left: 0;
+        width: 100%;
+  
+        
+    }
+    .signup-box{
+        background: green;
+        left: 0;
+        top: -100%;
+        width: 100%;
+
+        
+    }
+    .overlay-container{
+        position: absolute;
+        top: 80%;
+        left: 0%;
+        width: 100%;
+        height: 20%;   
+    }
+    h1{
+        font-weight: bolder;
+        font-size: large;
+    }
+    
+    p{
+        font-size: 10px;
+        font-weight: 100;
+        margin: 0 0 0;
+    
+    }
+
+    .overlay{
+    
+        
+        background: green;
+        position: relative;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+        justify-content: center;
+    
+    }
+
+    .overlay-box{
+        top: 0;
+    }
+    .left-overlay{
+        top: 100%;
+        width: 100%;
+        transform: translateX(0);
+    }
+    .right-overlay{
+        right: 0%;
+        bottom: 100%;
+        width: 100%;
+    }  
+    .container.right-panel-active .login-box{
+        transform: translateY(-100%);
+    }  
+    .container.right-panel-active .overlay-container{
+        transform: translateY(-0%);  
+    }  
+    .container.right-panel-active .signup-box{
+        transform: translateY(100%);
+        opacity:1;
+        z-index: 5;
+    }
+    
+    .container.right-panel-active .overlay{
+        transform: translateY(0%);
+    }
+    
+    .container.right-panel-active .left-overlay{
+        transform: translateY(-100%);
+    }
+    
+    .container.right-panel-active .right-overlay{
+        transform: translateY(100%);
+    }
+}
